@@ -4,6 +4,8 @@ services:
   postgres:
     image: postgres:15
     container_name: wailsalutem-postgres
+    networks:
+      - wailsalutem-net
     restart: unless-stopped
     environment:
       POSTGRES_USER: localadmin
@@ -19,6 +21,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
+      
+networks:
+  wailsalutem-net:
+    external: true
 volumes:
   postgres_data:
