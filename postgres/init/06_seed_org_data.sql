@@ -19,14 +19,17 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- PATIENT 1
+        -- PATIENT 1 (added keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, full_name, email, phone_number)
+            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa''::UUID,
+                ''12121212-1212-1212-1212-121212121212''::UUID,
                 ''Mary Anderson'',
                 ''mary.anderson@demo.com'',
-                ''+31600000011''
+                ''+31600000011'',
+                ''standard'',
+                ''weekly''
             )
         ', s.schema_name);
 
@@ -54,13 +57,15 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 1
+        -- FEEDBACK 1 (added patient_feedback and deleted_at)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating)
+            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0001-0001-0001-000000000001''::UUID,
                 ''aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa''::UUID,
-                5
+                5,
+                ''Caregiver was punctual and attentive'',
+                NULL
             )
         ', s.schema_name);
 
@@ -76,14 +81,17 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- PATIENT 2
+        -- PATIENT 2 (added keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, full_name, email, phone_number)
+            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb''::UUID,
+                ''23232323-2323-2323-2323-232323232323''::UUID,
                 ''James Martinez'',
                 ''james.martinez@demo.com'',
-                ''+31600000012''
+                ''+31600000012'',
+                ''intensive'',
+                ''daily''
             )
         ', s.schema_name);
 
@@ -111,13 +119,15 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 2
+        -- FEEDBACK 2 (added patient_feedback and deleted_at)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating)
+            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0002-0002-0002-000000000002''::UUID,
                 ''bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb''::UUID,
-                4
+                4,
+                ''Good visit; missed one medication'',
+                NULL
             )
         ', s.schema_name);
 
@@ -133,14 +143,17 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- PATIENT 3
+        -- PATIENT 3 (added keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, full_name, email, phone_number)
+            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''cccccccc-cccc-cccc-cccc-cccccccccccc''::UUID,
+                ''34343434-3434-3434-3434-343434343434''::UUID,
                 ''Patricia Taylor'',
                 ''patricia.taylor@demo.com'',
-                ''+31600000013''
+                ''+31600000013'',
+                ''rehab'',
+                ''biweekly''
             )
         ', s.schema_name);
 
@@ -168,13 +181,15 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 3
+        -- FEEDBACK 3 (added patient_feedback and deleted_at)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating)
+            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0003-0003-0003-000000000003''::UUID,
                 ''cccccccc-cccc-cccc-cccc-cccccccccccc''::UUID,
-                5
+                5,
+                ''Therapist was very encouraging'',
+                NULL
             )
         ', s.schema_name);
 
@@ -190,14 +205,17 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- PATIENT 4
+        -- PATIENT 4 (added keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, full_name, email, phone_number)
+            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''dddddddd-dddd-dddd-dddd-dddddddddddd''::UUID,
+                ''45454545-4545-4545-4545-454545454545''::UUID,
                 ''Robert Thomas'',
                 ''robert.thomas@demo.com'',
-                ''+31600000014''
+                ''+31600000014'',
+                ''palliative'',
+                ''monthly''
             )
         ', s.schema_name);
 
@@ -225,13 +243,15 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 4
+        -- FEEDBACK 4 (added patient_feedback and deleted_at)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating)
+            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0004-0004-0004-000000000004''::UUID,
                 ''dddddddd-dddd-dddd-dddd-dddddddddddd''::UUID,
-                3
+                3,
+                ''Visit helpful but patient felt tired afterwards'',
+                NULL
             )
         ', s.schema_name);
 
@@ -247,14 +267,17 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- PATIENT 5
+        -- PATIENT 5 (added keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, full_name, email, phone_number)
+            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee''::UUID,
+                ''56565656-5656-5656-5656-565656565656''::UUID,
                 ''Linda Moore'',
                 ''linda.moore@demo.com'',
-                ''+31600000015''
+                ''+31600000015'',
+                ''standard'',
+                ''weekly''
             )
         ', s.schema_name);
 
@@ -282,13 +305,15 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 5
+        -- FEEDBACK 5 (added patient_feedback and deleted_at)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating)
+            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0005-0005-0005-000000000005''::UUID,
                 ''eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee''::UUID,
-                5
+                5,
+                ''Excellent care and attention'',
+                NULL
             )
         ', s.schema_name);
 

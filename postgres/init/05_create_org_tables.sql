@@ -21,6 +21,7 @@ BEGIN
         EXECUTE format('
         CREATE TABLE IF NOT EXISTS %I.patients (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            keycloak_user_id UUID,
             full_name VARCHAR(255),
             email VARCHAR(255),
             phone_number VARCHAR(50),
@@ -29,6 +30,8 @@ BEGIN
             emergency_contact_name VARCHAR(255),
             emergency_contact_phone VARCHAR(50),
             medical_notes TEXT,
+            careplan_type VARCHAR(100),
+            careplan_frequency VARCHAR(100),
             is_active BOOLEAN DEFAULT true,
             created_at TIMESTAMP DEFAULT now(),
             updated_at TIMESTAMP,
@@ -67,7 +70,9 @@ BEGIN
             care_session_id UUID UNIQUE,
             patient_id UUID,
             rating INTEGER CHECK (rating BETWEEN 1 AND 5),
-            created_at TIMESTAMP DEFAULT now()
+            patient_feedback TEXT,
+            created_at TIMESTAMP DEFAULT now(),
+            deleted_at TIMESTAMP
         );', s.schema_name);
 
     END LOOP;
