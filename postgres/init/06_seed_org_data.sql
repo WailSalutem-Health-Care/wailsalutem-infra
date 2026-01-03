@@ -9,23 +9,25 @@ BEGIN
 
         -- CAREGIVER 1
         EXECUTE format('
-            INSERT INTO %I.users (id, keycloak_user_id, full_name, email, role)
+            INSERT INTO %I.users (id, keycloak_user_id, first_name, last_name, email, role)
             VALUES (
                 ''11111111-1111-1111-1111-111111111111''::UUID,
                 ''10101010-1010-1010-1010-101010101010''::UUID,
-                ''John Smith'',
+                ''John'',
+                ''Smith'',
                 ''john.smith@demo.com'',
                 ''caregiver''
             )
         ', s.schema_name);
 
-        -- PATIENT 1 (added keycloak_user_id, careplan_type, careplan_frequency)
+        -- PATIENT 1 (first_name, last_name, keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
+            INSERT INTO %I.patients (id, keycloak_user_id, first_name, last_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa''::UUID,
                 ''12121212-1212-1212-1212-121212121212''::UUID,
-                ''Mary Anderson'',
+                ''Mary'',
+                ''Anderson'',
                 ''mary.anderson@demo.com'',
                 ''+31600000011'',
                 ''standard'',
@@ -71,23 +73,25 @@ BEGIN
 
         -- CAREGIVER 2
         EXECUTE format('
-            INSERT INTO %I.users (id, keycloak_user_id, full_name, email, role)
+            INSERT INTO %I.users (id, keycloak_user_id, first_name, last_name, email, role)
             VALUES (
                 ''22222222-2222-2222-2222-222222222222''::UUID,
                 ''20202020-2020-2020-2020-202020202020''::UUID,
-                ''Sarah Johnson'',
+                ''Sarah'',
+                ''Johnson'',
                 ''sarah.johnson@demo.com'',
                 ''caregiver''
             )
         ', s.schema_name);
 
-        -- PATIENT 2 (added keycloak_user_id, careplan_type, careplan_frequency)
+        -- PATIENT 2 (first_name, last_name, keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
+            INSERT INTO %I.patients (id, keycloak_user_id, first_name, last_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb''::UUID,
                 ''23232323-2323-2323-2323-232323232323''::UUID,
-                ''James Martinez'',
+                ''James'',
+                ''Martinez'',
                 ''james.martinez@demo.com'',
                 ''+31600000012'',
                 ''intensive'',
@@ -133,23 +137,25 @@ BEGIN
 
         -- CAREGIVER 3
         EXECUTE format('
-            INSERT INTO %I.users (id, keycloak_user_id, full_name, email, role)
+            INSERT INTO %I.users (id, keycloak_user_id, first_name, last_name, email, role)
             VALUES (
                 ''33333333-3333-3333-3333-333333333333''::UUID,
                 ''30303030-3030-3030-3030-303030303030''::UUID,
-                ''Michael Brown'',
+                ''Michael'',
+                ''Brown'',
                 ''michael.brown@demo.com'',
                 ''caregiver''
             )
         ', s.schema_name);
 
-        -- PATIENT 3 (added keycloak_user_id, careplan_type, careplan_frequency)
+        -- PATIENT 3 (first_name, last_name, keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
+            INSERT INTO %I.patients (id, keycloak_user_id, first_name, last_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''cccccccc-cccc-cccc-cccc-cccccccccccc''::UUID,
                 ''34343434-3434-3434-3434-343434343434''::UUID,
-                ''Patricia Taylor'',
+                ''Patricia'',
+                ''Taylor'',
                 ''patricia.taylor@demo.com'',
                 ''+31600000013'',
                 ''rehab'',
@@ -195,23 +201,25 @@ BEGIN
 
         -- CAREGIVER 4
         EXECUTE format('
-            INSERT INTO %I.users (id, keycloak_user_id, full_name, email, role)
+            INSERT INTO %I.users (id, keycloak_user_id, first_name, last_name, email, role)
             VALUES (
                 ''44444444-4444-4444-4444-444444444444''::UUID,
                 ''40404040-4040-4040-4040-404040404040''::UUID,
-                ''Emily Davis'',
+                ''Emily'',
+                ''Davis'',
                 ''emily.davis@demo.com'',
                 ''caregiver''
             )
         ', s.schema_name);
 
-        -- PATIENT 4 (added keycloak_user_id, careplan_type, careplan_frequency)
+        -- PATIENT 4 (first_name, last_name, keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
+            INSERT INTO %I.patients (id, keycloak_user_id, first_name, last_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''dddddddd-dddd-dddd-dddd-dddddddddddd''::UUID,
                 ''45454545-4545-4545-4545-454545454545''::UUID,
-                ''Robert Thomas'',
+                ''Robert'',
+                ''Thomas'',
                 ''robert.thomas@demo.com'',
                 ''+31600000014'',
                 ''palliative'',
@@ -257,23 +265,25 @@ BEGIN
 
         -- CAREGIVER 5
         EXECUTE format('
-            INSERT INTO %I.users (id, keycloak_user_id, full_name, email, role)
+            INSERT INTO %I.users (id, keycloak_user_id, first_name, last_name, email, role)
             VALUES (
                 ''55555555-5555-5555-5555-555555555555''::UUID,
                 ''50505050-5050-5050-5050-505050505050''::UUID,
-                ''David Wilson'',
+                ''David'',
+                ''Wilson'',
                 ''david.wilson@demo.com'',
                 ''caregiver''
             )
         ', s.schema_name);
 
-        -- PATIENT 5 (added keycloak_user_id, careplan_type, careplan_frequency)
+        -- PATIENT 5 (first_name, last_name, keycloak_user_id, careplan_type, careplan_frequency)
         EXECUTE format('
-            INSERT INTO %I.patients (id, keycloak_user_id, full_name, email, phone_number, careplan_type, careplan_frequency)
+            INSERT INTO %I.patients (id, keycloak_user_id, first_name, last_name, email, phone_number, careplan_type, careplan_frequency)
             VALUES (
                 ''eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee''::UUID,
                 ''56565656-5656-5656-5656-565656565656''::UUID,
-                ''Linda Moore'',
+                ''Linda'',
+                ''Moore'',
                 ''linda.moore@demo.com'',
                 ''+31600000015'',
                 ''standard'',

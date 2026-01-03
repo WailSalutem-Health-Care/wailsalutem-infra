@@ -8,7 +8,8 @@ BEGIN
         CREATE TABLE IF NOT EXISTS %I.users (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             keycloak_user_id UUID NOT NULL,
-            full_name VARCHAR(255),
+            first_name VARCHAR(100),
+            last_name VARCHAR(100),
             email VARCHAR(255),
             phone_number VARCHAR(50),
             role VARCHAR(50),
@@ -21,8 +22,9 @@ BEGIN
         EXECUTE format('
         CREATE TABLE IF NOT EXISTS %I.patients (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            first_name VARCHAR(100),
+            last_name VARCHAR(100),
             keycloak_user_id UUID,
-            full_name VARCHAR(255),
             email VARCHAR(255),
             phone_number VARCHAR(50),
             date_of_birth DATE,
