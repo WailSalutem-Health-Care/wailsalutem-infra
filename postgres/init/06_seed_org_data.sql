@@ -59,12 +59,13 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 1 (added patient_feedback and deleted_at)
+        -- FEEDBACK 1 (added patient_feedback, deleted_at, caregiver_id)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
+            INSERT INTO %I.feedback (care_session_id, patient_id, caregiver_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0001-0001-0001-000000000001''::UUID,
                 ''aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa''::UUID,
+                ''11111111-1111-1111-1111-111111111111''::UUID,
                 5,
                 ''Caregiver was punctual and attentive'',
                 NULL
@@ -123,12 +124,13 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 2 (added patient_feedback and deleted_at)
+        -- FEEDBACK 2 (added patient_feedback, deleted_at, caregiver_id)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
+            INSERT INTO %I.feedback (care_session_id, patient_id, caregiver_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0002-0002-0002-000000000002''::UUID,
                 ''bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb''::UUID,
+                ''22222222-2222-2222-2222-222222222222''::UUID,
                 4,
                 ''Good visit; missed one medication'',
                 NULL
@@ -187,12 +189,13 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 3 (added patient_feedback and deleted_at)
+        -- FEEDBACK 3 (added patient_feedback, deleted_at, caregiver_id)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
+            INSERT INTO %I.feedback (care_session_id, patient_id, caregiver_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0003-0003-0003-000000000003''::UUID,
                 ''cccccccc-cccc-cccc-cccc-cccccccccccc''::UUID,
+                ''33333333-3333-3333-3333-333333333333''::UUID,
                 5,
                 ''Therapist was very encouraging'',
                 NULL
@@ -251,12 +254,13 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 4 (added patient_feedback and deleted_at)
+        -- FEEDBACK 4 (added patient_feedback, deleted_at, caregiver_id)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
+            INSERT INTO %I.feedback (care_session_id, patient_id, caregiver_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0004-0004-0004-000000000004''::UUID,
                 ''dddddddd-dddd-dddd-dddd-dddddddddddd''::UUID,
+                ''44444444-4444-4444-4444-444444444444''::UUID,
                 3,
                 ''Visit helpful but patient felt tired afterwards'',
                 NULL
@@ -315,12 +319,13 @@ BEGIN
             )
         ', s.schema_name);
 
-        -- FEEDBACK 5 (added patient_feedback and deleted_at)
+        -- FEEDBACK 5 (added patient_feedback, deleted_at, caregiver_id)
         EXECUTE format('
-            INSERT INTO %I.feedback (care_session_id, patient_id, rating, patient_feedback, deleted_at)
+            INSERT INTO %I.feedback (care_session_id, patient_id, caregiver_id, rating, patient_feedback, deleted_at)
             VALUES (
                 ''99999999-0005-0005-0005-000000000005''::UUID,
                 ''eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee''::UUID,
+                ''55555555-5555-5555-5555-555555555555''::UUID,
                 5,
                 ''Excellent care and attention'',
                 NULL

@@ -71,6 +71,7 @@ BEGIN
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             care_session_id UUID UNIQUE,
             patient_id UUID,
+            caregiver_id UUID,
             rating INTEGER CHECK (rating BETWEEN 1 AND 5),
             patient_feedback TEXT,
             created_at TIMESTAMP DEFAULT now(),
