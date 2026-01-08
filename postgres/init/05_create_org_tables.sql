@@ -8,6 +8,7 @@ BEGIN
         CREATE TABLE IF NOT EXISTS %I.users (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             keycloak_user_id UUID NOT NULL,
+            employee_id VARCHAR(50) UNIQUE,
             first_name VARCHAR(100),
             last_name VARCHAR(100),
             email VARCHAR(255),
@@ -22,6 +23,7 @@ BEGIN
         EXECUTE format('
         CREATE TABLE IF NOT EXISTS %I.patients (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            patient_id VARCHAR(50) UNIQUE,
             first_name VARCHAR(100),
             last_name VARCHAR(100),
             keycloak_user_id UUID,
@@ -43,6 +45,7 @@ BEGIN
         EXECUTE format('
         CREATE TABLE IF NOT EXISTS %I.care_sessions (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            session_id VARCHAR(50) UNIQUE,
             patient_id UUID REFERENCES %I.patients(id),
             caregiver_id UUID,
             check_in_time TIMESTAMP,
